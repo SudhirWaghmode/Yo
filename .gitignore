@@ -1,4 +1,10 @@
 *.class
+*.log
+*~
+uploads*
+*.DS_STORE*
+*.deb
+.*
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
