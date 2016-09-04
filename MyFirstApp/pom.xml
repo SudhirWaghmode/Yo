@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.samasara.dude</groupId>
+    <artifactId>samasara.app</artifactId>
+    <version>0.0.1</version>
+
+    <properties>
+        <lombokVersion>1.12.4</lombokVersion>
+        <dropwizardCore>1.0.0</dropwizardCore>
+        <dropwizardHibernate>1.0.0</dropwizardHibernate>
+        <dropwizardDBVersion>1.0.0</dropwizardDBVersion>
+        <guice.version>3.0</guice.version>
+        <gson.version>2.3</gson.version>
+        <mysql.connector.version>6.0.3</mysql.connector.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>Alfresco Maven Repository</id>
+            <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+        </repository>
+
+        <repository>
+            <id>dropwizard Repository</id>
+            <url>https://mvnrepository.com/artifact/io.dropwizard/dropwizard-core</url>
+        </repository>
+
+        <repository>
+            <id>mysql connector java</id>
+            <url>https://mvnrepository.com/artifact/mysql/mysql-connector-java</url>
+        </repository>
+
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombokVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-core</artifactId>
+            <version>${dropwizardCore}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-db</artifactId>
+            <version>${dropwizardDBVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-hibernate</artifactId>
+            <version>${dropwizardHibernate}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

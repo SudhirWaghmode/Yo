@@ -1,0 +1,47 @@
+db:
+  driverClass: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost/samurai
+  user: root
+  minSize: 8
+  maxSize: 32
+  maxWaitForConnection: 1s
+  validationQuery: "/* MyService Health Check */ SELECT 1"
+  checkConnectionWhileIdle: false
+  properties:
+      charSet: UTF-8
+      hibernate.show_sql: false
+
+name : "sudhir"
+
+server:
+  applicationConnectors:
+  - type: http
+    port: 27030
+  adminConnectors:
+  - type: http
+    port: 27031
+
+logging:
+  level: INFO
+  loggers:
+    com.samurai: DEBUG
+    org.hibernate: ERROR
+
+  appenders:
+    - type: console
+      threshold: INFO
+      target: stdout
+      logFormat: "%highlight(%-5level) [%date] [%X{UID}] [%thread] [%cyan(%logger{0})]: %message%n"
+
+
+    - type: file
+      currentLogFilename: /var/log/samurai/local.log
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: /var/log/samurai/local-%d{yyyy-MM-dd}.log
+      archivedFileCount: 5
+      timeZone: IST
+      logFormat: "%highlight(%-5level) [%date] [%X{UID}] [%thread] [%cyan(%logger{0})]: %message%n"
+
+
+
