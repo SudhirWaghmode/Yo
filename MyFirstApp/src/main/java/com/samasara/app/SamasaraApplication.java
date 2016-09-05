@@ -1,16 +1,20 @@
 package com.samasara.app;
 
+import com.bazaarvoice.dropwizard.assets.ConfiguredAssetsBundle;
+import com.google.common.collect.ImmutableMap;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.samasara.app.application.SamasaraApplicationModule;
 import com.samasara.app.configuration.SamasaraConfig;
 import com.samasara.app.core.models.dbModels.LoginCredentials;
 import com.samasara.app.core.resources.LoginResource;
+import com.samasara.app.resources.DashboardResourceView;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.dropwizard.views.ViewBundle;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,7 +54,16 @@ public class SamasaraApplication extends Application<SamasaraConfig> {
 
     @Override
     public void initialize(Bootstrap<SamasaraConfig> bootstrap) {
+        bootstrap.addBundle(new ConfiguredAssetsBundle("/WEB/", "/WEB/"));
         bootstrap.addBundle(hibernateBundle);
+        bootstrap.addBundle(new ViewBundle<SamasaraConfig>()
+        {
+            @Override
+            public ImmutableMap<String, ImmutableMap<String, String>> getViewConfiguration(SamasaraConfig myConf)
+            {
+                return myConf.getViewRendererConfiguration();
+            }
+        });
     }
 
     private Injector createInjector(SamasaraConfig config, HibernateBundle<SamasaraConfig> hibernateBundle){
@@ -59,6 +72,7 @@ public class SamasaraApplication extends Application<SamasaraConfig> {
 
     private void registerResource(Injector inj, Environment env){
         env.jersey().register(inj.getInstance(LoginResource.class));
+        env.jersey().register(inj.getInstance(DashboardResourceView.class));
     }
 
     private void addFilters(Environment env){

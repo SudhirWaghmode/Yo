@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.samasara.dude</groupId>
+  <artifactId>samasara.app</artifactId>
+  <version>0.0.1</version>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer />
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+      <id>Alfresco Maven Repository</id>
+      <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
+  <properties>
+    <dropwizardHibernate>1.0.0</dropwizardHibernate>
+    <guice.version>3.0</guice.version>
+    <guava.versio>18.0</guava.versio>
+    <dropwizard.freemarker.version>0.9.2</dropwizard.freemarker.version>
+    <gson.version>2.3</gson.version>
+    <dropwizardCore>1.0.0</dropwizardCore>
+    <dropwizardDBVersion>1.0.0</dropwizardDBVersion>
+    <mysql.connector.version>6.0.3</mysql.connector.version>
+    <lombokVersion>1.12.4</lombokVersion>
+    <dropwizardViewVersion>1.0.0</dropwizardViewVersion>
+  </properties>
+</project>
+

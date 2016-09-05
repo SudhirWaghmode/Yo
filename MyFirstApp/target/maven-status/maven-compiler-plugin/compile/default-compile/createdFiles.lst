@@ -1,0 +1,13 @@
+com/samasara/app/configuration/SamasaraConfig.class
+com/samasara/app/resources/DashboardResourceView.class
+com/samasara/app/core/services/LoginService.class
+com/samasara/app/application/SamasaraApplicationModule.class
+com/samasara/app/core/resources/LoginResource.class
+com/samasara/app/core/dao/impl/LoginDaoImpl.class
+com/samasara/app/SamasaraApplication.class
+com/samasara/app/views/DashboardView.class
+com/samasara/app/core/models/dbModels/LoginCredentials.class
+com/samasara/app/core/dao/ILoginDao.class
+com/samasara/app/SamasaraApplication$1.class
+com/samasara/app/SamasaraApplication$2.class
+com/samasara/app/core/models/requestModels/UserDetails.class

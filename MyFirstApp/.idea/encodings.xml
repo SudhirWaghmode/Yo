@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/main/resources/WEB/app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/WEB/lib/angular" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/WEB/lib/bootstrap" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/samasara/app/views/dashboard.ftl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/samasara/app/views/error.ftl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/samasara/app/views/main.ftl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/samasara/app/views/operation.ftl" charset="UTF-8" />
+  </component>
 </project>
